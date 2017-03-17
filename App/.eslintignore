@@ -1,0 +1,5 @@
+src/assets/**
+static/**
+node_modules/**
+src/app.js
+build/**

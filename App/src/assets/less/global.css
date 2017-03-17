@@ -1,0 +1,71 @@
+html,
+body {
+  height: 100%;
+}
+#app {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+.clear-fix {
+  clear: both;
+}
+.container {
+  margin-bottom: 50px;
+}
+.text-align-left {
+  text-align: left;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-align-right {
+  text-align: right;
+}
+.top-space {
+  margin-top: 5px;
+}
+.bottom-space {
+  margin-top: 5px;
+}
+.fade-transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.fade-enter {
+  left: 100%;
+  opacity: 0;
+}
+.fade-leave {
+  opacity: 0;
+}
+.header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 10px;
+}
+.header a {
+  color: #fff;
+}
+.form-horizontal label.control-label {
+  padding-top: 7px;
+}
+.sub-title {
+  color: #FF9800;
+  margin: 5px 0;
+}
+.hr {
+  clear: both;
+  border: none;
+  border-bottom: solid 1px #BBBBBB;
+}
+.edit-icon {
+  color: #FF9800;
+}

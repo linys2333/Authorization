@@ -1,0 +1,16 @@
+get-help entityframework
+
+切换【启动项目】到EF
+Visual Studio Nuget控制台选择EF
+
+--------------------------------------------
+创建迁移
+Add-Migration 迁移名称
+
+更新数据库到最新版本
+update-database
+
+回退数据库到初始版本
+update-database -target:0 -Verbose
+
+Update-Database -TargetMigration $InitialDatabase -Force

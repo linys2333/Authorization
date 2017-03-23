@@ -12,31 +12,15 @@ const getters = {
 
 const actions = {
     getSecret({ commit }, data) {
-        return new Promise((resolve, reject) => {
-            userService.getSecret(data)
-                .done(salt => {
-                    resolve(salt)
-                }).fail(reject)
-        })
+        return userService.getSecret(data)
     },
     login({ commit }, data) {
-        return new Promise((resolve, reject) => {
-            userService.login(data)
-                .done(() => {
-                    commit('login', data)
-                    resolve()
-                }).fail(reject)
-        })
+        return userService.login(data)
+            .then(() => commit('login', data))
     },
     logout({ commit }) {
-        return new Promise((resolve, reject) => {
-            userService.logout()
-                .done(() => {
-                    commit('logout')
-                    resolve()
-                })
-                .fail(reject)
-        })
+        return userService.logout()
+            .then(() => commit('logout'))
     }
 }
 

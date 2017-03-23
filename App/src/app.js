@@ -1,10 +1,16 @@
 /* 启动文件 */
 import Vue from 'vue'
+import VueResource from 'vue-resource'
 import './directives/'
 import './filters/'
 import store from './store/'
 import router from './routes/router'
 import Index from 'COMPONENT/Index'
+import { httpHandle } from 'SERVICE/init'
+
+Vue.use(VueResource)
+Vue.http.options.emulateJSON = true
+Vue.http.interceptors.push(httpHandle)
 
 new Vue({
     el: '#app',

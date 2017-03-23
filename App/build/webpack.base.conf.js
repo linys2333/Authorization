@@ -38,7 +38,8 @@ module.exports = {
             COMPONENT: path.join(src, 'components'),
             SERVICE: path.join(src, 'services'),
             VIEW: path.join(src, 'views'),
-            STORE: path.join(src, 'store')
+            STORE: path.join(src, 'store'),
+            ROUTER: path.join(src, 'routes')
         }
     },
     resolveLoader: {

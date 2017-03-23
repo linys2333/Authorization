@@ -19,15 +19,10 @@ export const httpHandle = (req, next) => {
                 break
             case 401:
                 sessionStorage.removeItem('token')
-                break
-        }
 
-        if (!res.ok) {
-            let token = sessionStorage.token || ''
-            if (!token) {
                 alert('身份验证失败，请重新登陆')
                 router.push('/Login')
-            }
+                break
         }
     })
 }

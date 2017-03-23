@@ -16,7 +16,7 @@ const fail = (res) => {
     if (data && !data.success) {
         return Promise.reject(data.message)
     }
-    return Promise.reject(data)
+    return Promise.reject('系统异常')
 }
 
 const xhr = ({ url, data = null, method = 'get' }) => {

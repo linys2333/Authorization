@@ -35,6 +35,9 @@ namespace Host
 
             _webapp = WebApp.Start<Startup>(_url);
 
+            var auth = Ioc.Resolve<IAuth>();
+            auth.CleanTask();
+
             var log = Ioc.Resolve<ILog>();
             log.Info("服务已启动：" + _url);
         }

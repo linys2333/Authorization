@@ -69,5 +69,10 @@ namespace Common
         /// </summary>
         /// <param name="tokenStr">加密后的字符串</param>
         void Delete(string tokenStr);
+
+        /// <summary>
+        /// 清理无效Token
+        /// </summary>
+        void CleanTask();
     }
 }

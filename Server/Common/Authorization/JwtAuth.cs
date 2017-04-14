@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Timers;
 using AnyExtend;
 
 namespace Common
@@ -56,6 +58,7 @@ namespace Common
             // 4、校验服务端信息
             if (!_opr.Check(tServer))
             {
+                Delete(tokenStr);
                 return false;
             }
 
@@ -79,5 +82,39 @@ namespace Common
         }
 
         public void Delete(string tokenStr) => TokenList.Remove(tokenStr);
+
+        public void CleanTask()
+        {
+            Task.Run(() =>
+            {
+                var timer = new Timer();
+
+                timer.Elapsed += (source, e) =>
+                {
+                    var list = new List<string>();
+
+                    TokenList.ForEach(t =>
+                    {
+                        if (!_opr.Check(t.Value))
+                        {
+                            list.Add(t.Key);
+                        }
+                    });
+
+                    lock (TokenList)
+                    {
+                        list.ForEach(Delete);
+                    }
+                };
+
+                timer.Interval = TokenConfig.EffectSecond * 1000;
+
+                // 循环执行-true，单次执行-false  
+                timer.AutoReset = true;
+
+                // 是否立即执行
+                timer.Enabled = true;
+            });
+        }
     }
 }

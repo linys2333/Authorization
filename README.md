@@ -73,7 +73,7 @@
 > 后端校验：[前端加密密码] == MD5( [数据库存储密码].[服务端随机串] )
 
 > 【注意】：MD5和SHA-1被认为不再安全，微软推荐使用SHA-2系列（SHA-256、SHA-512等）加密算法（
-<https://msdn.microsoft.com/zh-cn/library/92f9ye3s(v=vs.110).aspx>）
+<https://msdn.microsoft.com/zh-cn/library/92f9ye3s(v=vs.110).aspx#哈希值>）
 
  * ### <a name="Token加密">Token加密</a>
 

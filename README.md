@@ -7,12 +7,16 @@
  * [登陆流程](#登陆流程)
  * [请求认证](#请求认证)
  * [退出登陆](#退出登陆)
+
 #### &sect; 身份验证模块
  * [文件构成](#文件构成)
  * [方法说明](#方法说明)
+
 #### &sect; 加密算法
  * [密码加密](#密码加密)
  * [Token加密](#Token加密)
+
+#### &sect; [参考资料](#参考资料)
 
 ****
 
@@ -68,6 +72,9 @@
 
 > 后端校验：[前端加密密码] == MD5( [数据库存储密码].[服务端随机串] )
 
+> 【注意】：MD5和SHA-1被认为不再安全，微软推荐使用SHA-2系列（SHA-256、SHA-512等）加密算法（
+<https://msdn.microsoft.com/zh-cn/library/92f9ye3s(v=vs.110).aspx>）
+
  * ### <a name="Token加密">Token加密</a>
 
 > Token对象构成：
@@ -92,3 +99,11 @@
 ```
 
 > Token加密串：Base64Url( [Header] ).Base64Url( [Payload] ).Base64Url( HMAC( Base64Url( [Header] ).Base64Url( [Payload] ) , [Salt] ) )
+
+## &sect; <a name="参考资料">参考资料</a>
+
+ * [Token和JWT](https://ninghao.net/blog/2834)
+
+ * [Http协议](http://www.cnblogs.com/ranyonsue/p/5984001.html)
+
+ * [跨域资源共享(CORS)](http://www.ruanyifeng.com/blog/2016/04/cors.html)
